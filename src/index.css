@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", sans-serif;
+  
+  /* Redefining emerald palette to match the exact premium deep slate-teal color */
+  --color-emerald-50: #f1f6f7;
+  --color-emerald-100: #dbe9eb;
+  --color-emerald-200: #bbd5d9;
+  --color-emerald-300: #8eb7be;
+  --color-emerald-400: #5b929c;
+  --color-emerald-500: #3c7781;
+  --color-emerald-600: #225a66; /* Warna utama dari gambar Anda */
+  --color-emerald-700: #1e4a54;
+  --color-emerald-800: #1d3e47;
+  --color-emerald-900: #1b353d;
+  --color-emerald-950: #0f1f24;
+}
+
+html {
+  scroll-behavior: smooth;
+}
