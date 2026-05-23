@@ -21,6 +21,21 @@ export const Navbar: React.FC = () => {
     { href: '#cara-pesan', label: 'Cara Pesan' },
   ];
 
+  const handleMobileClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      // Tunggu 300ms sampai animasi penutupan drawer (collapse) selesai
+      // agar posisi koordinat scroll tidak tergeser oleh perubahan tinggi layar
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled || isOpen ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
@@ -93,7 +108,7 @@ export const Navbar: React.FC = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleMobileClick(e, link.href)}
                   className="block px-4 py-3 rounded-xl text-gray-600 font-medium hover:bg-emerald-50 hover:text-emerald-600 transition-all"
                 >
                   {link.label}
@@ -102,7 +117,7 @@ export const Navbar: React.FC = () => {
               <div className="pt-4 border-t border-gray-100">
                 <a
                   href="#produk"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleMobileClick(e, '#produk')}
                   className="block w-full bg-emerald-600 text-white text-center py-3 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/10"
                 >
                   Pesan Sekarang
