@@ -8,7 +8,7 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   // Membuat link whatsapp order otomatis
-  const waNumber = "6281234567890"; // Ganti dengan nomor WhatsApp UMKM yang asli
+  const waNumber = "62895351230947";
   const message = encodeURIComponent(
     `Halo SawargiFish, saya mau pesan:\n` +
     `- ${product.name} (${product.weight})\n\n` +
@@ -22,14 +22,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       transition={{ type: "spring", stiffness: 300 }}
       className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-xl flex flex-col h-full"
     >
-      
+
       {/* GAMBAR PRODUK PLACEHOLDER */}
       <div className={`relative aspect-[4/3] w-full bg-gradient-to-tr ${product.imagePlaceholder} p-1 flex items-center justify-center`}>
         <div className="w-[90%] h-[90%] bg-white/40 backdrop-blur-[1px] rounded-2xl border-2 border-dashed border-gray-600/20 flex flex-col items-center justify-center p-4 text-center">
           {/* Image tag kosong untuk foto produk asli */}
-          <img 
-            src="" 
-            alt={product.name} 
+          <img
+            src=""
+            alt={product.name}
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
             className="w-full h-full object-cover rounded-xl mb-2"
           />
@@ -55,7 +55,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <div className="flex justify-between items-start">
           <h3 className="text-lg font-bold text-gray-900 line-clamp-1">{product.name}</h3>
         </div>
-        
+
         <p className="text-gray-500 text-xs line-clamp-2 leading-relaxed flex-grow">
           {product.description}
         </p>
@@ -79,9 +79,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 <svg
                   key={idx}
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`h-3.5 w-3.5 ${
-                    idx < product.spiciness ? 'text-orange-500 fill-orange-500' : 'text-gray-200'
-                  }`}
+                  className={`h-3.5 w-3.5 ${idx < product.spiciness ? 'text-orange-500 fill-orange-500' : 'text-gray-200'
+                    }`}
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={2}
