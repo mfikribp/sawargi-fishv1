@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
               />
             </div>
             <span className="font-extrabold text-xl bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
-              SawargiFish
+              Sawargi Fish
             </span>
           </div>
           <p className="text-slate-400 text-xs leading-relaxed">

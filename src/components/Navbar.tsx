@@ -24,7 +24,7 @@ export const Navbar: React.FC = () => {
   const handleMobileClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
-    
+
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
     if (element) {
@@ -37,22 +37,21 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled || isOpen ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isOpen ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        
+
         {/* LOGO UMKM */}
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full border border-emerald-500/20 bg-emerald-50 flex items-center justify-center overflow-hidden shadow-sm">
-            <img 
-              src={logoImg} 
-              alt="Logo SawargiFish" 
+            <img
+              src={logoImg}
+              alt="Logo SawargiFish"
               className="w-full h-full object-cover"
             />
           </div>
-          <span className="font-extrabold text-xl bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
-            SawargiFish
+          <span className="font-extrabold text-xl text-black">
+            Sawargi Fish
           </span>
         </div>
 
